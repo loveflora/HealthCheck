@@ -3,6 +3,8 @@ import React from "react";
 import { useState } from "react";
 import styles from "../Styles/Main.module.css";
 import { useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { dataState } from "../Store/list";
 
 // 이름 / 성별 / 만 나이 / 키 / 몸무게 입력
 
@@ -10,9 +12,9 @@ export default function Main() {
   const [inputData, setInputData] = useState({
     name: "",
     gender: "",
-    age: 0,
-    height: 0,
-    weight: 0,
+    age: "",
+    height: "",
+    weight: "",
   });
 
   const navigate = useNavigate();
@@ -23,14 +25,29 @@ export default function Main() {
       return false;
     } else if (!inputData.age) {
       alert("나이를 입력해주세요");
+      return false;
     } else if (!inputData.gender) {
       alert("성별을 선택해주세요");
+      return false;
     } else if (!inputData.height) {
       alert("키를 입력해주세요");
+      return false;
     } else if (!inputData.weight) {
       alert("몸무게를 입력해주세요");
+      return false;
+    } else {
+      navigate("/BMI");
     }
   };
+
+  const onChange = (e) => {
+    const { key, value } = e.target;
+    setInputData({
+      [key]: value,
+    });
+  };
+
+  console.log(inputData.name);
 
   return (
     <container className={styles.container}>
@@ -38,51 +55,68 @@ export default function Main() {
         <div className={styles.div}>
           <p className={styles.title}>👋 Check your Health ! </p>
         </div>
-        <input
-          className={styles.input}
-          // value={inputData.name}
-          type="text"
-          placeholder="성함을 입력해주세요"
-          onChange={(e) => setInputData(e.target.value)}
-        ></input>
-        <p className={styles.gender}>성별</p>
-        {/* <label>
-          <input type="radio" name="male" value={inputData.gender}>
-            여성
-          </input>
-          <input type="radio" name="female" value={inputData.gender}>
-            남성
-          </input>
-        </label> */}
-        <input
-          className={styles.input}
-          value={inputData.age}
-          type="text"
-          placeholder="나이를 입력해주세요"
-          onChange={(e) => setInputData(e.target.value)}
-        ></input>
-        <input
-          className={styles.input}
-          value={inputData.height}
-          type="text"
-          placeholder="키을 입력해주세요"
-          onChange={(e) => setInputData(e.target.value)}
-        ></input>
-        <input
-          className={styles.input}
-          value={inputData.weight}
-          type="text"
-          placeholder="몸무게를 입력해주세요"
-          onChange={(e) => setInputData(e.target.value)}
-        ></input>
+        <form className={styles.form}>
+          <p className={styles.p}>Name</p>
+          <input
+            className={styles.input}
+            type="text"
+            placeholder="성함을 입력해주세요"
+            onChange={onChange}
+            value={inputData.name}
+          ></input>
+          <br />
+          <p className={styles.p}>Gender</p>
+          <input
+            className={styles.gender}
+            type="radio"
+            name="gender"
+            value={inputData.gender}
+          />
+          남성
+          <input
+            className={styles.gender}
+            type="radio"
+            name="gender"
+            value={inputData.gender}
+          />{" "}
+          여성
+          <br />
+          <p className={styles.p}>Age</p>
+          <input
+            className={styles.input}
+            value={inputData.age}
+            type="text"
+            placeholder="나이를 입력해주세요"
+            onChange={onChange}
+          ></input>
+          <br />
+          <p className={styles.p}>Height</p>
+          <input
+            className={styles.input}
+            value={inputData.height}
+            type="text"
+            placeholder="키를 입력해주세요"
+            onChange={onChange}
+          ></input>
+          <br />
+          <p className={styles.p}>Weight</p>
+          <input
+            className={styles.input}
+            value={inputData.weight}
+            type="text"
+            placeholder="몸무게를 입력해주세요"
+            onChange={onChange}
+          ></input>
+        </form>
+        <button
+          className={styles.button}
+          onClick={() => {
+            emptyValue();
+          }}
+        >
+          RESULT
+        </button>
       </main>
-      <button
-        className={styles.button}
-        onClick={() => {
-          emptyValue();
-          navigate("/BMI");
-        }}
-      ></button>
     </container>
   );
 }
