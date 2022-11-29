@@ -4,6 +4,8 @@ import { Route, Routes } from "react-router-dom";
 import Main from "./Components/Main";
 import BMI from "./Components/BMI";
 import { RecoilRoot } from "recoil";
+import BP from "./Components/BP";
+import BST from "./Components/BST";
 
 function App() {
   return (
@@ -11,8 +13,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/BMI" element={<BMI />} />
-        {/* <Route path="/BP" element={<BP />} /> */}
-        {/* <Route path="/BST" element={<BST />} /> */}
+        <Route path="/BP" element={<BP />} />
+        <Route path="/BST" element={<BST />} />
       </Routes>
     </RecoilRoot>
   );

@@ -1,6 +1,12 @@
-// import { atom, useRecoilValue, selector } from "recoil";
+import { atom, useRecoilValue } from "recoil";
 
-// export const dataState = atom({
-//   key: "dataState",
-//   default: [{ name: "", gender: "", age: 0, height: 0, weight: 0 }],
-// });
+export const dataState = atom({
+  key: "dataState",
+  default: {
+    name: "김세화",
+    gender: "female",
+    age: "25",
+    height: "169",
+    weight: "55",
+  },
+});
