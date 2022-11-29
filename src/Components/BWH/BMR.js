@@ -1,21 +1,21 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useRecoilState } from "recoil";
-import { dataState } from "../Store/list";
+import { dataState } from "../../Store/list";
 import { Link } from "react-router-dom";
 
-import styles from "../Styles/BMI.module.css";
-import weight1 from "../Icons/weight1.png";
-import weight2 from "../Icons/weight2.png";
-import weight3 from "../Icons/weight3.png";
-import weight4 from "../Icons/weight4.png";
-import weight5 from "../Icons/weight5.png";
-import check0 from "../Icons/check0.png";
-import check1 from "../Icons/check1.png";
-import check2 from "../Icons/check2.png";
-import check3 from "../Icons/check3.png";
-import check4 from "../Icons/check4.png";
-import check5 from "../Icons/check5.png";
+import styles from "../../Styles/BMI.module.css";
+import weight1 from "../../Icons/weight1.png";
+import weight2 from "../../Icons/weight2.png";
+import weight3 from "../../Icons/weight3.png";
+import weight4 from "../../Icons/weight4.png";
+import weight5 from "../../Icons/weight5.png";
+import check0 from "../../Icons/check0.png";
+import check1 from "../../Icons/check1.png";
+import check2 from "../../Icons/check2.png";
+import check3 from "../../Icons/check3.png";
+import check4 from "../../Icons/check4.png";
+import check5 from "../../Icons/check5.png";
 
 // BMI = KG / M*M
 
@@ -79,21 +79,48 @@ export default function Board() {
           <Link to="/BMI" className={styles.link}>
             <li className={styles.li}>BMI</li>
           </Link>
-          <Link to="/BP" className={styles.link}>
-            <li className={styles.li}>BLOOD PRESSURE</li>
+          <Link to="/BMI/BMR" className={styles.link}>
+            <li className={styles.li}>기초대사량</li>
           </Link>
-          <Link to="/BST" className={styles.link}>
-            <li className={styles.li}>BLOOD SUGAR</li>
+          <Link to="/BMI/Nutrition" className={styles.link}>
+            <li className={styles.li}>권장영양정보</li>
           </Link>
         </nav>
         <div className={styles.div}>
           <p className={styles.result}>
-            {inputData.name} 님의 혈압은{" "}
+            {inputData.name} 님의 BMI 지수는{" "}
             <span className={styles.span}>{Math.floor(BMI * 100) / 100}</span>
             로, <span className={styles.span}>'{result()}'</span>입니다.
           </p>
         </div>
-
+        <img
+          className={styles.img}
+          src={weight1}
+          alt="weight1"
+          width="60"
+          height="80"
+        />
+        <img
+          className={styles.img}
+          src={weight2}
+          alt="weight2"
+          width="60"
+          height="80"
+        />
+        <img
+          className={styles.img}
+          src={weight3}
+          alt="weight3"
+          width="60"
+          height="80"
+        />
+        <img
+          className={styles.img}
+          src={weight4}
+          alt="weight4"
+          width="60"
+          height="80"
+        />
         <img
           className={styles.img}
           src={weight5}
