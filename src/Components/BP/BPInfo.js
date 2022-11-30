@@ -12,27 +12,6 @@ export default function BP() {
   const navigate = useNavigate();
   const [inputData, setInputData] = useRecoilState(dataState);
 
-  // function result() {
-  //   if (BMI < 18.5) {
-  //     return "저체중";
-  //   } else if (BMI < 23) {
-  //     return "정상";
-  //   } else if (BMI < 25) {
-  //     return "과체중";
-  //   } else if (BMI < 30) {
-  //     return "비만";
-  //   } else {
-  //     return "고도비만";
-  //   }
-  // }
-
-  //   for(var i=1; i<=17; i++) {
-  //     if(user_area == i) {
-  //     img_src = '../public/img/'+ i + '_logo.png';
-  //     }
-  // }
-  // return img_src;
-
   return (
     <container className={styles.container}>
       <main className={styles.main}>
@@ -47,23 +26,22 @@ export default function BP() {
             <li className={styles.li}>예방하려면 ?</li>
           </Link>
         </nav>
-        <div className={styles.div}>
-          <input></input>
-          <input></input>
-
-          <button></button>
-          <p className={styles.result}>
-            {inputData.name} 님의 혈압은{" "}
-            {/* <span className={styles.span}>'{result()}'</span>입니다. */}
-          </p>
-        </div>
+        <div className={styles.div}></div>
 
         <content className={styles.content}>
-          <p calssName={styles.p}>저체중 : 18.5 미만</p>
-          <p calssName={styles.p}>정상 : 18.5 ~ 23 </p>
-          <p calssName={styles.p}>과체중 : 23 ~ 25 </p>
-          <p calssName={styles.p}>비만 : 25 ~ 30 </p>
-          <p calssName={styles.p}>고도비만 : 30 이상 </p>
+          <h2 className={styles.h2}>1. 증상</h2>
+          <p calssName={styles.p}>
+            고혈압은 혈압이 여러 원인으로 인해 높아진 상태를 의미합니다.
+            <br />
+            혈압은 동맥혈관 벽에 대항한 혈액의 압력을 말합니다.
+            <br />
+            혈액의 압력은 심장이 수축하여 동맥혈관으로 혈액을 보낼 때 가장
+            높은데, 이때의 혈압을 수축기 혈압이라고 합니다. 또한 심장이 늘어나서
+            혈액을 받아들일 때 가장 낮은데, 이때의 혈압을 이완기 혈압이라고
+            합니다. <br />
+            우리나라 성인 인구의 약 30%가 이러한 혈압이 높아진 증상인 고혈압이
+            있는 것으로 추정됩니다.{" "}
+          </p>
         </content>
       </main>
     </container>

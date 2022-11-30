@@ -4,7 +4,7 @@ import { useRecoilState } from "recoil";
 import { dataState } from "../../Store/list";
 import { Link } from "react-router-dom";
 
-import styles from "../../Styles/BMR.module.css";
+import styles from "../../Styles/BMR2.module.css";
 
 export default function Board() {
   const navigate = useNavigate();
@@ -132,18 +132,6 @@ export default function Board() {
     }
   }
 
-  console.log(suggest());
-
-  function GoResult() {
-    if (suggest() == "낮습니다.") {
-      return navigate("/BMR/1");
-    } else if (suggest() == "적정 수준에 있습니다.") {
-      return navigate("/BMR/2");
-    } else if (suggest() == "높습니다.") {
-      return navigate("/BMR/3");
-    } else return false;
-  }
-
   return (
     <container className={styles.container}>
       <main className={styles.main}>
@@ -158,15 +146,13 @@ export default function Board() {
             <li className={styles.li}>권장영양정보</li>
           </Link>
         </nav>
-        <div className={styles.div}>
-          <p className={styles.result}>
-            {inputData.name} 님의 기초 대사량은{" "}
-            <span className={styles.span}>
-              '{(Math.floor(BMR()) * 100) / 100}'kcal
-            </span>
-            &nbsp;입니다.
-          </p>
-        </div>
+        <p className={styles.result}>
+          {inputData.name} 님의 기초 대사량은{" "}
+          <span className={styles.span}>
+            '{(Math.floor(BMR()) * 100) / 100}'kcal
+          </span>
+          &nbsp;입니다.
+        </p>
 
         <content className={styles.content}>
           <p className={styles.avg}>
@@ -184,14 +170,30 @@ export default function Board() {
             <span className={styles.span}>{suggest()}</span>
           </p>
         </content>
-        <button
-          className={styles.btn}
-          onClick={(e) => {
-            GoResult();
-          }}
-        >
-          👉🏻 결과해석 보러가기{" "}
-        </button>
+        <button className={styles.btn}>👉🏻 결과해석 보러가기 </button>
+        <div className={styles.scroll}>
+          <h2 className={styles.h2}>기초 대사량이란 ?</h2>
+          <p className={styles.sug}>
+            우리 몸이 생명을 유지하는 데 필요한 최소한의 에너지를 말한다. 이는
+            우리의 심장이 뛰고, 호흡을 하고, 체온을 유지하며, 뇌가 활동을 하는데
+            필요한 생명 유지를 위한 에너지로 우리가 사용하는 전체 에너지 중
+            기초대사량이 차지하는 에너지는 약 70%에 달한다
+          </p>
+          <h2 className={styles.h2}>
+            적정 수준의 기초 대사량을 보유하고 계시네요 !
+          </h2>
+          <p>
+            다이어트가 목적이라면, 기초대사량 상승을 목표로 삼는 것을 추천드려요
+            👍🏻
+          </p>
+          <h2 className={styles.h2}>기초 대사량이란 ?</h2>
+          <p className={styles.sug}>
+            우리 몸이 생명을 유지하는 데 필요한 최소한의 에너지를 말한다. 이는
+            우리의 심장이 뛰고, 호흡을 하고, 체온을 유지하며, 뇌가 활동을 하는데
+            필요한 생명 유지를 위한 에너지로 우리가 사용하는 전체 에너지 중
+            기초대사량이 차지하는 에너지는 약 70%에 달한다
+          </p>
+        </div>
       </main>
     </container>
   );

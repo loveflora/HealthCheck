@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { dataState } from "../Store/list";
@@ -80,7 +79,7 @@ export default function Main() {
             value="male"
             onChange={onChange}
           />
-          남성
+          <p className={styles.label}>남성</p>
           <input
             className={styles.gender}
             type="radio"
@@ -88,7 +87,7 @@ export default function Main() {
             value="female"
             onChange={onChange}
           />{" "}
-          여성
+          <p className={styles.label}>여성</p>
           <br />
           <p className={styles.p}>Age</p>
           <input

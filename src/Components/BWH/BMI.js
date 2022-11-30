@@ -19,7 +19,7 @@ import check5 from "../../Icons/check5.png";
 
 // BMI = KG / M*M
 
-export default function Board() {
+export default function BMI() {
   const navigate = useNavigate();
   const [inputData, setInputData] = useRecoilState(dataState);
 
@@ -44,10 +44,6 @@ export default function Board() {
       return "고도비만";
     }
   }
-
-  // function check() {
-  //   if
-  // }
 
   function check() {
     for (let i = 0; i <= 5; i++) {
@@ -79,10 +75,10 @@ export default function Board() {
           <Link to="/BMI" className={styles.link}>
             <li className={styles.li}>BMI</li>
           </Link>
-          <Link to="/BMI/BMR" className={styles.link}>
+          <Link to="/BMR" className={styles.link}>
             <li className={styles.li}>기초대사량</li>
           </Link>
-          <Link to="/BMI/Nutrition" className={styles.link}>
+          <Link to="/Nutrition" className={styles.link}>
             <li className={styles.li}>권장영양정보</li>
           </Link>
         </nav>

@@ -53,22 +53,9 @@ export default function BP() {
             <li className={styles.li}>예방하려면 ?</li>
           </Link>
         </nav>
-        <div className={styles.div}>
-          <input></input>
-          <input></input>
-
-          <button></button>
-          <p className={styles.result}>
-            {inputData.name} 님의 혈압은{" "}
-            {/* <span className={styles.span}>'{result()}'</span>입니다. */}
-          </p>
-        </div>
+        <div className={styles.div}></div>
 
         <content className={styles.content}>
-          <p calssName={styles.p}>저체중 : 18.5 미만</p>
-          <p calssName={styles.p}>정상 : 18.5 ~ 23 </p>
-          <p calssName={styles.p}>과체중 : 23 ~ 25 </p>
-          <p calssName={styles.p}>비만 : 25 ~ 30 </p>
           <p calssName={styles.p}>고도비만 : 30 이상 </p>
         </content>
       </main>

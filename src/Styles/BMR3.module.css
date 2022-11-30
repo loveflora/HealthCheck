@@ -51,50 +51,11 @@ li:hover {
   width: 800px;
   height: 600px;
   text-align: center;
-}
-
-.header {
-  margin: 30px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.BP {
-  float: left;
-  margin: 20px;
-  padding-left: 60px;
-}
-
-.input {
-  padding: 8px;
-  margin: 10px;
-  outline: none;
-}
-
-.title {
-  text-align: center;
-  padding: 10px;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.btn {
-  background-color: #e9967a;
-  width: 50%;
-  height: 50px;
-  color: white;
-  border-radius: 8px;
-  border: none;
-  margin: 20px 180px;
   font-size: 20px;
-  font-weight: bold;
-  display: block;
 }
 
 .img {
-  margin: 10px;
+  margin: 45px;
 }
 
 .checkImg {
@@ -120,10 +81,10 @@ li:hover {
 .result {
   color: rgb(73, 63, 63);
   text-align: center;
-  margin-top: 70px;
-  margin-bottom: 50px;
+  margin-top: 60px;
+  margin-bottom: 30px;
   font-weight: bold;
-  width: 35ch;
+  width: 33ch;
   animation: typing 1s steps(15), blink 0.4s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
@@ -142,3 +103,25 @@ li:hover {
     border-color: transparent;
   }
 }
+
+.btn {
+  display: block;
+  margin: 10px;
+  margin-top: 30px;
+  margin-left: 220px;
+  width: 40%;
+  height: 40px;
+  background-color: #e9967a;
+  border: none;
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.h2 {
+  margin: 50px 0px 20px 0px;
+}
+
+/* .sug {
+  line-height: 160%;
+} */

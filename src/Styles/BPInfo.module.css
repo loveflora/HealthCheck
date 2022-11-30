@@ -12,33 +12,25 @@
 
 .nav {
   display: flex;
-  overflow: hidden;
   color: white;
   background-color: #e9967a;
   text-align: center;
   justify-content: center;
   border-radius: 5px;
   border-style: double;
-  border-width: 5px;
+  border-width: 8px;
 }
 
 /* flex 상위에 적용하기 */
 
 .li {
   float: left;
-  padding: 20px 40px;
-  font-size: 30px;
-}
-
-li:hover {
-  background-color: white;
-  color: #e9967a;
-}
-
-.li1 {
   padding: 20px 30px;
-  width: 230px;
-  font-size: 30px;
+  width: 262px;
+  font-size: 25px;
+  font-weight: bold;
+}
+li:hover {
   background-color: white;
   color: #e9967a;
 }
@@ -55,60 +47,21 @@ li:hover {
 }
 
 .content {
+  /* display: block; */
+  padding: 20px;
   width: 800px;
   height: 600px;
-  /* flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-  text-align: center;
+  font-size: 20px;
+  /* text-align: center; */
+  line-height: 30px;
 }
-
-.img {
-  margin: 45px;
-}
-
-.checkImg {
-  margin: 0 55px;
-}
-
+/* 
 .p {
+  line-height: 20px;
+} */
+
+.h2 {
+  color: #832b0e;
+  margin-bottom: 20px;
   text-align: center;
-  margin: 20px;
-  padding: 20px;
-  width: 20px;
-}
-
-.span {
-  color: #bb3b11;
-}
-
-.div {
-  display: grid;
-  place-items: center;
-}
-
-.result {
-  color: rgb(73, 63, 63);
-  text-align: center;
-  margin-top: 70px;
-  margin-bottom: 50px;
-  font-weight: bold;
-  width: 35ch;
-  animation: typing 1s steps(15), blink 0.4s step-end infinite alternate;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid;
-  font-size: 2em;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-}
-
-@keyframes blink {
-  60% {
-    border-color: transparent;
-  }
 }

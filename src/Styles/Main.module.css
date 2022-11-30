@@ -15,23 +15,27 @@
   margin-bottom: 30px;
   font-weight: bold;
   overflow: hidden;
-  font-size: 2em;
+  font-size: 3em;
 }
 
 .p {
   margin: 10px 0 10px 20px;
   display: inline-block;
-  width: 100px;
+  width: 200px;
   text-align: center;
+  font-size: 23px;
+  font-weight: bold;
 }
 
 .input {
   /* display: inline-block; */
   width: 200px;
-  height: 30px;
+  height: 40px;
   padding: 10px;
   margin: 10px;
   border: none;
+  outline: none;
+  font-size: 16px;
 }
 
 .gender {
@@ -39,41 +43,47 @@
   margin-right: 10px;
 }
 
+.label {
+  display: inline;
+  font-size: 18px;
+  font-weight: 15px;
+}
+
 .button {
   display: block;
   margin: 10px;
-  margin-top: 40px;
-  margin-left: 40px;
-  width: 300px;
-  height: 40px;
+  margin-top: 30px;
+  margin-left: 50px;
+  width: 80%;
+  height: 55px;
   background-color: #e9967a;
   border: none;
   color: white;
-  font-size: 16px;
+  font-size: 23px;
   border-radius: 5px;
 }
 
 .button1 {
   display: inline;
   margin: 10px;
-  margin-left: 40px;
-  width: 140px;
-  height: 50px;
+  margin-left: 50px;
+  width: 38%;
+  height: 55px;
   background-color: #e9967a;
   border: none;
   color: white;
-  font-size: 16px;
+  font-size: 21px;
   border-radius: 5px;
 }
 
 .button2 {
   display: inline;
   margin: 10px;
-  width: 140px;
-  height: 50px;
+  width: 38%;
+  height: 55px;
   background-color: #e9967a;
   border: none;
   color: white;
-  font-size: 16px;
+  font-size: 21px;
   border-radius: 5px;
 }
