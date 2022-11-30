@@ -113,7 +113,7 @@ export default function BSTResult1() {
         </button>
         <div className={styles.div}>
           <p className={styles.result}>
-            {inputData.name} 님은
+            {inputData.name} 님의 현재 혈당 상태는
             <span className={styles.span}> '{result()}' </span>입니다.
           </p>
         </div>
