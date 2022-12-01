@@ -54,27 +54,26 @@ li:hover {
 }
 
 .header {
-  margin: 10px;
-  margin-left: 150px;
+  margin: 30px;
   flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
 .BST {
-  float: left;
-  margin: 20px;
-  /* padding-left: 60px; */
+  width: 80%;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .input {
   padding: 8px;
-  margin: 30px;
-  width: 200px;
-  margin-left: 130px;
+  margin: 10px;
   outline: none;
-  display: block;
 }
 
 .title {
@@ -82,70 +81,20 @@ li:hover {
   padding: 10px;
   font-size: 18px;
   font-weight: bold;
-  /* margin: 0 100px; */
 }
 
 .btn {
   background-color: #e9967a;
-  width: 30%;
-  height: 40px;
+  width: 45%;
+  height: 45px;
   color: white;
   border-radius: 8px;
   border: none;
-  margin: 20px 260px;
+  margin: 20px 0px;
   font-size: 18px;
   font-weight: bold;
-  display: block;
 }
 
 .img {
-  margin: 20px;
-  /* margin-left: 90px; */
-  /* display: flex; */
-}
-
-.checkImg {
-  margin: 0 55px;
-}
-
-.p {
-  text-align: center;
-  margin: 20px;
-  padding: 20px;
-  width: 20px;
-}
-
-.span {
-  color: #bb3b11;
-}
-
-.div {
-  display: grid;
-  place-items: center;
-}
-
-.result {
-  color: rgb(73, 63, 63);
-  text-align: center;
-  margin-top: 70px;
-  margin-bottom: 50px;
-  font-weight: bold;
-  width: 35ch;
-  animation: typing 1s steps(15), blink 0.4s step-end infinite alternate;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid;
-  font-size: 2em;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-}
-
-@keyframes blink {
-  60% {
-    border-color: transparent;
-  }
+  margin: 10px;
 }

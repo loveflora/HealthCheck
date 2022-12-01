@@ -47,54 +47,69 @@ export default function BST() {
         </nav>
         <div className={styles.header}>
           <div className={styles.BST}>
-            <img
-              className={styles.img}
-              src={BST1}
-              alt="BST1"
-              width="70"
-              height="50"
-            />
-            <p className={styles.title}> 공복 혈당 </p>
-            <input
-              className={styles.radio}
-              type="radio"
-              value={meal}
-              name="meal"
-            />
+            <div className={styles.imgInput}>
+              <img
+                className={styles.img}
+                src={BST1}
+                alt="BST1"
+                width="70"
+                height="50"
+              />
+              <p className={styles.title}> 공복 혈당 </p>
+              <input
+                className={styles.radio}
+                type="radio"
+                value={meal}
+                name="meal"
+              />
+            </div>
+            <br />
+            <div className={styles.imgInput}>
+              <img
+                className={styles.img}
+                src={BST2}
+                alt="BST2"
+                width="70"
+                height="50"
+              />
+              <p className={styles.title}> 식후 혈당 </p>
+              <input
+                className={styles.radio}
+                type="radio"
+                value={meal}
+                name="meal"
+              />
+            </div>
           </div>
           <br />
-          <img
-            className={styles.img}
-            src={BST2}
-            alt="BST2"
-            width="70"
-            height="50"
-          />
-          <p className={styles.title}> 식후 혈당 </p>
-          <input
-            className={styles.radio}
-            type="radio"
-            value={meal}
-            name="meal"
-          />
-          <br />
-          <input
-            className={styles.input}
-            type="number"
-            value={inputData.BST}
-            name="BST"
-            placeholder="혈당을 입력해주세요"
-            onChange={onChange}
-          />
+          <div className={styles.in}>
+            <input
+              className={styles.input}
+              type="number"
+              value={inputData.BST}
+              name="BST"
+              placeholder="혈당을 입력해주세요"
+              onChange={onChange}
+            />
+            <br />
+          </div>
+          <button
+            className={styles.btn}
+            onClick={(e) => {
+              navigate("/BST/Result1");
+            }}
+          >
+            결과 보기
+          </button>
+          <button
+            className={styles.btn}
+            onClick={(e) => {
+              navigate("/BST/Practice");
+            }}
+          >
+            결과 보기
+          </button>
         </div>
-        <button
-          className={styles.btn}
-          onClick={(e) => {
-            navigate("/BST/Result1");
-          }}
-        >
-          결과 보기
-        </button>
       </main>
     </container>
   );

@@ -78,8 +78,6 @@ export default function BP() {
               onChange={onChange}
             />
             <br />
-          </div>
-          <div className={styles.footer}>
             <button
               className={styles.btn}
               onClick={(e) => {
