@@ -28,6 +28,17 @@ export default function BP() {
     });
   };
 
+  function click() {
+    if (inputData.SBP === undefined || inputData.SBP === "") {
+      return alert("수축기 혈압을 입력해주세요.");
+    } else if (inputData.DBP === undefined || inputData.DBP === undefined) {
+      return alert("이완기 혈압을 입력해주세요.");
+    } else return navigate("/BP/Result");
+  }
+
+  console.log(inputData.DBP);
+  console.log(inputData.SBP);
+
   return (
     <container className={styles.container}>
       <main className={styles.main}>
@@ -44,49 +55,51 @@ export default function BP() {
         </nav>
         <div className={styles.header}>
           <div className={styles.BP}>
-            <img
-              className={styles.img}
-              src={SBP}
-              alt="SBP"
-              width="60"
-              height="60"
-            />
-            <p className={styles.title}>수축기 혈압 </p>
-            <input
-              className={styles.input}
-              type="number"
-              value={inputData.SBP}
-              name="SBP"
-              onChange={onChange}
-            />
+            <div>
+              <img
+                className={styles.img}
+                src={SBP}
+                alt="SBP"
+                width="60"
+                height="60"
+              />
+              <p className={styles.title}>수축기 혈압 </p>
+              <input
+                className={styles.input}
+                type="number"
+                value={inputData.SBP}
+                name="SBP"
+                onChange={onChange}
+              />
+            </div>
+            <br />
+            <div>
+              <img
+                className={styles.img}
+                src={DBP}
+                alt="DBP"
+                width="60"
+                height="60"
+              />
+              <p className={styles.title}>이완기 혈압 </p>
+              <input
+                className={styles.input}
+                type="number"
+                value={inputData.DBP}
+                name="DBP"
+                onChange={onChange}
+              />
+            </div>
           </div>
           <br />
-          <div>
-            <img
-              className={styles.img}
-              src={DBP}
-              alt="DBP"
-              width="60"
-              height="60"
-            />
-            <p className={styles.title}>이완기 혈압 </p>
-            <input
-              className={styles.input}
-              type="number"
-              value={inputData.DBP}
-              name="DBP"
-              onChange={onChange}
-            />
-            <br />
-            <button
-              className={styles.btn}
-              onClick={(e) => {
-                navigate("/BP/Result");
-              }}
-            >
-              결과 보기
-            </button>
-          </div>
+          <button
+            className={styles.btn}
+            onClick={(e) => {
+              click();
+            }}
+          >
+            결과 보기
+          </button>
         </div>
       </main>
     </container>

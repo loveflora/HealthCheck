@@ -157,7 +157,7 @@ export default function Board() {
         </div>
 
         <content className={styles.content}>
-          <p calssName={styles.avg}>
+          <p className={styles.avg}>
             {" "}
             <span className={styles.span}>
               {" "}
@@ -167,7 +167,7 @@ export default function Board() {
             <span className={styles.span}> {avgBMR()} </span> kcal 입니다.
           </p>
           <br />
-          <p calssName={styles.avg}>
+          <p className={styles.avg}>
             따라서 {inputData.name}님의 기초 대사량은{" "}
             <span className={styles.span}>{suggest()}</span>
           </p>

@@ -73,7 +73,7 @@ export default function BSTResult1() {
             <br />
             <br />
             <h2 className={styles.h2}>1. 증상</h2>
-            <p calssName={styles.p}>
+            <p className={styles.p}>
               고혈압은 혈압이 여러 원인으로 인해 높아진 상태를 의미합니다.
               <br />
               혈압은 동맥혈관 벽에 대항한 혈액의 압력을 말합니다.

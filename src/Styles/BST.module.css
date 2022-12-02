@@ -47,12 +47,6 @@ li:hover {
   border-radius: 15px;
 }
 
-.content {
-  width: 800px;
-  height: 600px;
-  text-align: center;
-}
-
 .header {
   margin: 30px;
   flex-direction: column;
@@ -62,17 +56,17 @@ li:hover {
 }
 
 .BST {
-  width: 80%;
   display: inline-flex;
   flex-direction: row;
-  justify-content: center;
   justify-content: space-evenly;
   align-items: center;
+  width: 80%;
+  margin-top: 30px;
 }
 
 .input {
   padding: 8px;
-  margin: 10px;
+  margin: 40px 10px;
   outline: none;
 }
 
@@ -90,11 +84,13 @@ li:hover {
   color: white;
   border-radius: 8px;
   border: none;
-  margin: 20px 0px;
   font-size: 18px;
   font-weight: bold;
 }
 
-.img {
-  margin: 10px;
+.p {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  width: 20px;
 }

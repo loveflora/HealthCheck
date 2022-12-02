@@ -83,33 +83,11 @@ li:hover {
   color: #bb3b11;
 }
 
-.div {
-  display: grid;
-  place-items: center;
-}
-
 .result {
   color: rgb(73, 63, 63);
   text-align: center;
   margin-top: 70px;
   margin-bottom: 50px;
   font-weight: bold;
-  width: 35ch;
-  animation: typing 1s steps(15), blink 0.4s step-end infinite alternate;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid;
   font-size: 2em;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-}
-
-@keyframes blink {
-  60% {
-    border-color: transparent;
-  }
 }

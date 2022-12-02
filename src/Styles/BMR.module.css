@@ -84,7 +84,7 @@ li:hover {
   margin-top: 60px;
   margin-bottom: 30px;
   font-weight: bold;
-  width: 33ch;
+  width: 35ch;
   animation: typing 1s steps(15), blink 0.4s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;

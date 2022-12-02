@@ -48,15 +48,13 @@ export default function BP() {
           </Link>
         </nav>
         <div className={styles.div}>
-          <p className={styles.result}>{inputData.name} 님의 BMI 지수는</p>
+          <p className={styles.result}>
+            {inputData.name} 님의 적정한 단백질 섭취량은
+          </p>
         </div>
 
         <content className={styles.content}>
-          <p calssName={styles.p}>저체중 : 18.5 미만</p>
-          <p calssName={styles.p}>정상 : 18.5 ~ 23 </p>
-          <p calssName={styles.p}>과체중 : 23 ~ 25 </p>
-          <p calssName={styles.p}>비만 : 25 ~ 30 </p>
-          <p calssName={styles.p}>고도비만 : 30 이상 </p>
+          <p className={styles.p}>저체중 : 18.5 미만</p>
         </content>
       </main>
     </container>

@@ -30,6 +30,7 @@
   font-size: 25px;
   font-weight: bold;
 }
+
 li:hover {
   background-color: white;
   color: #e9967a;
@@ -44,4 +45,52 @@ li:hover {
   height: 800px;
   padding: 50px;
   border-radius: 15px;
+}
+
+.header {
+  margin: 30px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.BP {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+  margin-top: 30px;
+}
+
+.input {
+  padding: 8px;
+  margin: 40px 10px;
+  outline: none;
+}
+
+.title {
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.btn {
+  background-color: #e9967a;
+  width: 45%;
+  height: 45px;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.p {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  width: 20px;
 }

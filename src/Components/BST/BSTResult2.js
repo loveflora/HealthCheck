@@ -16,21 +16,18 @@ import check2 from "../../Icons/check2.png";
 import check3 from "../../Icons/check3.png";
 import check4 from "../../Icons/check4.png";
 
-import styles from "../../Styles/BSTResult1.module.css";
+import styles from "../../Styles/BSTResult2.module.css";
 
 // 결과별로 알맞는 개선점을 제안하고 싶음
 
 // 저혈당 : 70mg/dL미만
-// 정상 : 70~100mg/dL 미만
-// 조절필요 : 100 ~ 125mg/dL 미만
-// 관리필요 : 125mg/dL 이상
+// 정상 : 70~140mg/dL 미만
+// 조절필요 : 140 ~ 200mg/dL 미만
+// 관리필요 : 200mg/dL 이상
 
-// 조절필요 : 140 ~ 200mg/dL 미만 관리필요 : 200mg/dL 이상
-
-export default function BSTResult1() {
+export default function BSTResult2() {
   const navigate = useNavigate();
   const [inputData, setInputData] = useRecoilState(dataState);
-  const [meal, setMeal] = useState("");
 
   const onChange = (e) => {
     const { name, value } = e.target;
@@ -43,11 +40,11 @@ export default function BSTResult1() {
   function result() {
     if (inputData.BST < 70) {
       return "저혈당";
-    } else if (inputData.BST < 100) {
+    } else if (inputData.BST < 140) {
       return "정상";
-    } else if (inputData.BST < 125) {
+    } else if (inputData.BST < 200) {
       return "조절 필요";
-    } else if (inputData.BST >= 125) {
+    } else if (inputData.BST >= 200) {
       return "관리 필요";
     } else {
       return false;
@@ -68,6 +65,14 @@ export default function BSTResult1() {
     }
   }
 
+  function click() {
+    if (inputData.meal === "npo") {
+      return navigate("/BST/Result1");
+    } else if (inputData.meal === "pc") {
+      return navigate("/BST/Result2");
+    } else return alert("입력해주세요");
+  }
+
   return (
     <container className={styles.container}>
       <main className={styles.main}>
@@ -84,37 +89,41 @@ export default function BSTResult1() {
         </nav>
         <div className={styles.header}>
           <div className={styles.BST}>
-            <img
-              className={styles.img}
-              src={BST1}
-              alt="BST1"
-              width="70"
-              height="50"
-            />
-            <p className={styles.title}>공복 혈당 </p>
-            <input
-              className={styles.radio}
-              type="radio"
-              value={meal}
-              name="meal"
-            />
-          </div>
-          <br />
-          <div>
-            <img
-              className={styles.img}
-              src={BST2}
-              alt="BST2"
-              width="70"
-              height="50"
-            />
-            <p className={styles.title}> 식후 혈당 </p>
-            <input
-              className={styles.radio}
-              type="radio"
-              value={meal}
-              name="meal"
-            />
+            <div>
+              <img
+                className={styles.img}
+                src={BST1}
+                alt="BST1"
+                width="70"
+                height="50"
+              />
+              <div className={styles.title}> 공복 혈당 </div>
+              <input
+                className={styles.radio}
+                type="radio"
+                value="npo"
+                name="meal"
+                onChange={onChange}
+              />
+            </div>
+            <br />
+            <div>
+              <img
+                className={styles.img}
+                src={BST2}
+                alt="BST2"
+                width="70"
+                height="50"
+              />
+              <div className={styles.title}> 식후 혈당 </div>
+              <input
+                className={styles.radio}
+                type="radio"
+                value="pc"
+                name="meal"
+                onChange={onChange}
+              />
+            </div>
           </div>
           <br />
           <input
@@ -129,7 +138,7 @@ export default function BSTResult1() {
           <button
             className={styles.btn}
             onClick={(e) => {
-              navigate("/BST/Result1");
+              click();
             }}
           >
             결과 보기
@@ -141,69 +150,86 @@ export default function BSTResult1() {
             <span className={styles.span}> '{result()}' </span>입니다.
           </p>
         </div>
-        <content className={styles.content}>
-          <div>
-            <img
-              className={styles.checkImg}
-              src={check()}
-              alt="check1"
-              width="40"
-              height="30"
-            />
-            <img
-              className={styles.checkImg}
-              src={check()}
-              alt="check2"
-              width="40"
-              height="30"
-            />
-            <img
-              className={styles.checkImg}
-              src={check()}
-              alt="check3"
-              width="40"
-              height="30"
-            />
-            <img
-              className={styles.checkImg}
-              src={check()}
-              alt="check4"
-              width="40"
-              height="30"
-            />
+        <div className={styles.content}>
+          <div className={styles.check}>
+            <div>
+              <img
+                className={styles.checkImg}
+                src={check()}
+                alt="check1"
+                width="40"
+                height="30"
+              />
+            </div>
+            <div>
+              <img
+                className={styles.checkImg}
+                src={check()}
+                alt="check2"
+                width="40"
+                height="30"
+              />
+            </div>
+            <div>
+              <img
+                className={styles.checkImg}
+                src={check()}
+                alt="check3"
+                width="40"
+                height="30"
+              />
+            </div>
+            <div>
+              <img
+                className={styles.checkImg}
+                src={check()}
+                alt="check4"
+                width="40"
+                height="30"
+              />
+            </div>
           </div>
           <br />
-          <div>
-            <img
-              className={styles.resultImg}
-              src={result1}
-              alt="result1"
-              width="80"
-              height="80"
-            />
-            <img
-              className={styles.resultImg}
-              src={result2}
-              alt="result2"
-              width="80"
-              height="80"
-            />
-            <img
-              className={styles.resultImg}
-              src={result3}
-              alt="result3"
-              width="80"
-              height="80"
-            />
-            <img
-              className={styles.resultImg}
-              src={result4}
-              alt="result4"
-              width="80"
-              height="80"
-            />
+          <div className={styles.face}>
+            <div>
+              <img
+                className={styles.resultImg}
+                src={result1}
+                alt="result1"
+                width="80"
+                height="80"
+              />
+            </div>
+            <div>
+              {" "}
+              <img
+                className={styles.resultImg}
+                src={result2}
+                alt="result2"
+                width="80"
+                height="80"
+              />
+            </div>
+            <div>
+              <img
+                className={styles.resultImg}
+                src={result3}
+                alt="result3"
+                width="80"
+                height="80"
+              />
+            </div>
+            <div>
+              <img
+                className={styles.resultImg}
+                src={result4}
+                alt="result4"
+                width="80"
+                height="80"
+              />
+            </div>
           </div>
-        </content>
+        </div>
       </main>
     </container>
   );

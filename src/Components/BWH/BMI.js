@@ -45,21 +45,42 @@ export default function BMI() {
     }
   }
 
-  function check() {
-    for (let i = 0; i <= 5; i++) {
-      if ((result = "저체중")) {
-        return check1;
-      } else if ((result = "정상")) {
-        return check2;
-      } else if ((result = "과체중")) {
-        return check3;
-      } else if ((result = "비만")) {
-        return check4;
-      } else if ((result = "고도비만")) {
-        return check5;
-      }
-    }
+  const arr = ["저체중", "정상", "과체중", "비만", "고도비만"];
+  const checkArr = [check1, check2, check3, check4, check5];
+
+  const data = arr.findIndex((v) => result() === v);
+  const checkData = checkArr[data];
+
+  // 나머지
+  const rest = arr.filter((v, id) => id !== data);
+
+  // const restImg = rest.findIndex((v) => result() === v);
+
+  function restImg() {
+    if (rest.includes(result())) return check0;
   }
+
+  console.log("arr : " + arr);
+  console.log("data : " + data);
+  console.log("rest : " + rest);
+  console.log("checkData : " + checkData);
+  console.log(restImg());
+
+  // function js() {
+  //   for (let i = 0; i <= 5; i++) {
+  //     if ((result = "저체중")) {
+  //       return check1;
+  //     } else if ((result = "정상")) {
+  //       return check2;
+  //     } else if ((result = "과체중")) {
+  //       return check3;
+  //     } else if ((result = "비만")) {
+  //       return check4;
+  //     } else if ((result = "고도비만")) {
+  //       return check5;
+  //     }
+  //   }
+  // }
 
   //   for(var i=1; i<=17; i++) {
   //     if(user_area == i) {
@@ -89,6 +110,56 @@ export default function BMI() {
             로, <span className={styles.span}>'{result()}'</span>입니다.
           </p>
         </div>
+        <img
+          className={styles.checkImg}
+          src={checkData}
+          alt="check"
+          width="40"
+          height="30"
+        />
+        <img
+          className={styles.checkImg}
+          src={restImg()}
+          alt="check0"
+          width="40"
+          height="30"
+        />
+
+        {/* <img
+          className={styles.checkImg}
+          src={check()}
+          alt="check1"
+          width="40"
+          height="30"
+        />
+        <img
+          className={styles.checkImg}
+          src={check()}
+          alt="check2"
+          width="40"
+          height="30"
+        />
+        <img
+          className={styles.checkImg}
+          src={check()}
+          alt="check3"
+          width="40"
+          height="30"
+        />
+        <img
+          className={styles.checkImg}
+          src={check()}
+          alt="check4"
+          width="40"
+          height="30"
+        />
+        <img
+          className={styles.checkImg}
+          src={check()}
+          alt="check5"
+          width="40"
+          height="30"
+        /> */}
         <img
           className={styles.img}
           src={weight1}
@@ -125,49 +196,15 @@ export default function BMI() {
           height="80"
         />
         <br />
-        <img
-          className={styles.checkImg}
-          src={check()}
-          alt="check1"
-          width="40"
-          height="30"
-        />
-        <img
-          className={styles.checkImg}
-          src={check()}
-          alt="check2"
-          width="40"
-          height="30"
-        />
-        <img
-          className={styles.checkImg}
-          src={check()}
-          alt="check3"
-          width="40"
-          height="30"
-        />
-        <img
-          className={styles.checkImg}
-          src={check()}
-          alt="check4"
-          width="40"
-          height="30"
-        />
-        <img
-          className={styles.checkImg}
-          src={check()}
-          alt="check5"
-          width="40"
-          height="30"
-        />
 
-        <content className={styles.content}>
-          <p calssName={styles.p}>저체중 : 18.5 미만</p>
-          <p calssName={styles.p}>정상 : 18.5 ~ 23 </p>
-          <p calssName={styles.p}>과체중 : 23 ~ 25 </p>
-          <p calssName={styles.p}>비만 : 25 ~ 30 </p>
-          <p calssName={styles.p}>고도비만 : 30 이상 </p>
-        </content>
+        <div className={styles.content}>
+          <h2 className={styles.h2}> ~~~ 참고사항 ~~~ </h2>
+          <p className={styles.p}>저체중 : 18.5 미만</p>
+          <p className={styles.p}>정상 : 18.5 ~ 23 </p>
+          <p className={styles.p}>과체중 : 23 ~ 25 </p>
+          <p className={styles.p}>비만 : 25 ~ 30 </p>
+          <p className={styles.p}>고도비만 : 30 이상 </p>
+        </div>
       </main>
     </container>
   );

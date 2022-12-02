@@ -21,7 +21,7 @@ import styles from "../../Styles/BST.module.css";
 export default function BST() {
   const navigate = useNavigate();
   const [inputData, setInputData] = useRecoilState(dataState);
-  const [meal, setMeal] = useState("");
+  // const [meal, setMeal] = useState("");
 
   const onChange = (e) => {
     const { name, value } = e.target;
@@ -30,6 +30,21 @@ export default function BST() {
       [name]: value,
     });
   };
+
+  function click() {
+    if (inputData.meal === undefined) {
+      return alert("식전/식후 혈당을 체크해주세요.");
+    } else if (inputData.BST === undefined) {
+      return alert("혈당 수치를 입력해주세요.");
+    } else if (inputData.meal === "npo") {
+      return navigate("/BST/Result1");
+    } else if (inputData.meal === "pc") {
+      return navigate("/BST/Result2");
+    } else return false;
+  }
+
+  console.log(inputData.meal);
+  console.log(inputData.BST);
 
   return (
     <container className={styles.container}>
@@ -47,7 +62,7 @@ export default function BST() {
         </nav>
         <div className={styles.header}>
           <div className={styles.BST}>
-            <div className={styles.imgInput}>
+            <div>
               <img
                 className={styles.img}
                 src={BST1}
@@ -55,16 +70,17 @@ export default function BST() {
                 width="70"
                 height="50"
               />
-              <p className={styles.title}> 공복 혈당 </p>
+              <div className={styles.title}> 공복 혈당 </div>
               <input
                 className={styles.radio}
                 type="radio"
-                value={meal}
+                value="npo"
                 name="meal"
+                onChange={onChange}
               />
             </div>
             <br />
-            <div className={styles.imgInput}>
+            <div>
               <img
                 className={styles.img}
                 src={BST2}
@@ -72,39 +88,30 @@ export default function BST() {
                 width="70"
                 height="50"
               />
-              <p className={styles.title}> 식후 혈당 </p>
+              <div className={styles.title}> 식후 혈당 </div>
               <input
                 className={styles.radio}
                 type="radio"
-                value={meal}
+                value="pc"
                 name="meal"
+                onChange={onChange}
               />
             </div>
           </div>
           <br />
-          <div className={styles.in}>
-            <input
-              className={styles.input}
-              type="number"
-              value={inputData.BST}
-              name="BST"
-              placeholder="혈당을 입력해주세요"
-              onChange={onChange}
-            />
-            <br />
-          </div>
+          <input
+            className={styles.input}
+            type="number"
+            value={inputData.BST}
+            name="BST"
+            placeholder="혈당을 입력해주세요"
+            onChange={onChange}
+          />
+          <br />
           <button
             className={styles.btn}
             onClick={(e) => {
-              navigate("/BST/Result1");
-            }}
-          >
-            결과 보기
-          </button>
-          <button
-            className={styles.btn}
-            onClick={(e) => {
-              navigate("/BST/Practice");
+              click();
             }}
           >
             결과 보기
